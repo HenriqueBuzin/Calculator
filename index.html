@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<title>Calculadora</title>
+		<meta charset="UTF-8" />
+		<meta name="author" content="Henrique Buzin" />
+		<!-- CSS -->
+		<link rel="stylesheet" href="./node_modules/jquery-ui-dist/jquery-ui.min.css">
+		<link rel="stylesheet" href="./assets/css/index.css">
+		<!-- JS -->
+		<script src="./node_modules/jquery/dist/jquery.min.js"></script>
+		<script src="./node_modules/jquery-ui-dist/jquery-ui.min.js"></script>
+		<script src="./assets/js/index.js"></script>
+		<script src="./assets/js/math.js"></script>
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="57x57" href="./assets/images/favicon/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="./assets/images/favicon/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="./assets/images/favicon/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="./assets/images/favicon/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="./assets/images/favicon/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="./assets/images/favicon/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="./assets/images/favicon/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="./assets/images/favicon/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="./assets/images/favicon/apple-icon-180x180.png">
+		<link rel="icon" sizes="192x192" type="image/png" href="./assets/images/favicon/android-icon-192x192.png">
+		<link rel="icon" sizes="32x32" type="image/png" href="./assets/images/favicon/favicon-32x32.png">
+		<link rel="icon" sizes="96x96" type="image/png" href="./assets/images/favicon/favicon-96x96.png">
+	</head>
+	<body>
+		<div id="select">
+			<label>Selecione o circuito:</label>
+			<input type="radio" name="circuit" class="circuit" value="1">Retificador
+			<input type="radio" name="circuit" class="circuit" value="2">Buck
+			<input type="radio" name="circuit" class="circuit" value="3">Boost
+		</div>
+		<div id="boost">
+			<h1>Boost</h1>
+			<div class="tabs">
+				<ul>
+					<li><a href="#tabs-1">D</a></li>
+					<li><a href="#tabs-2">R</a></li>
+					<li><a href="#tabs-3">L</a></li>
+					<li><a href="#tabs-4">C</a></li>
+				</ul>
+				<div id="tabs-1">					
+					<label for="boostdvo">V<sub>0</sub></label>
+					<input type="number" id="boostdvo">
+					<label for="boostdvi">V<sub>I</sub></label>
+					<input type="number" id="boostdvi">
+					<button class="calculate" data-circuit="boost" data-ingot="d">Calcular</button>
+				</div>
+				<div id="tabs-2">
+					<label for="boostrio">I<sub>0</sub></label>
+					<input type="number" id="boostrio">
+					<label for="boostrvo">V<sub>0</sub></label>
+					<input type="number" id="boostrvo">		
+					<button>Calcular</button>
+				</div>
+				<div id="tabs-3">
+					<label for="boostldeltai">&#916;<sub>I</sub></label>
+					<input type="number" id="boostldeltai">
+					<label for="boostld">D</label>
+					<input type="number" id="boostld">
+					<label for="boostldeltail">&#916;<sub>IL</sub></label>
+					<input type="number" id="boostldeltail">
+					<label for="boostlf">&fnof;</label>
+					<input type="number" id="boostlf">
+					<button>Calcular</button>
+				</div>
+				<div id="tabs-4">
+					<label for="boostcd">D</label>
+					<input type="number" id="boostcd">
+					<label for="boostcio">I<sub>0</sub></label>
+					<input type="number" id="boostcio">
+					<label for="boostcf">&fnof;</label>
+					<input type="number" id="boostcf">
+					<label for="boostcdeltavo">&#916;<sub>V<sub>0</sub></sub></label>
+					<input type="number" id="boostcdeltavo">
+					<button>Calcular</button>
+				</div>
+			</div>
+		</div>
+		<div id="buck">
+			<h1>Buck</h1>
+			<div class="tabs">
+				<ul>
+					<li><a href="#tabs-1">D</a></li>
+					<li><a href="#tabs-2">L</a></li>
+					<li><a href="#tabs-3">C</a></li>
+					<li><a href="#tabs-4">R</a></li>
+				</ul>
+				<div id="tabs-1">					
+					<label for="buckdvo">V<sub>0</sub></label>
+					<input type="number" id="buckdvo">
+					<label for="buckdvi">V<sub>I</sub></label>
+					<input type="number" id="buckdvi">
+					<button>Calcular</button>		
+				</div>
+				<div id="tabs-2">
+					<label for="buckld">D</label>
+					<input type="number" id="buckld">
+					<label for="bucklvo">V<sub>0</sub></label>
+					<input type="number" id="bucklvo">
+					<label for="buckldeltail">&#916;<sub>IL</sub></label>
+					<input type="number" id="buckldeltail">
+					<label for="bucklf">&fnof;</label>
+					<input type="number" id="bucklf">
+					<button>Calcular</button>		
+				</div>
+				<div id="tabs-3">
+					<label for="buckrd">D</label>
+					<input type="number" id="buckrd">
+					<label for="buckrvo">V<sub>0</sub></label>
+					<input type="number" id="buckrvo">
+					<label for="buckrl">L</label>
+					<input type="number" id="buckrl">
+					<label for="buckrdeltavo">&#916;<sub>V<sub>0</sub></sub></label>
+					<input type="number" id="buckrdeltavo">
+					<label for="buckrf">&fnof;</label>
+					<input type="number" id="buckrf">
+					<button>Calcular</button>			
+				</div>
+				<div id="tabs-4">
+					<label for="buckrio">I<sub>0</sub></label>
+					<input type="number" id="buckrio">
+					<label for="buckrvo">V<sub>0</sub></label>
+					<input type="number" id="buckrvo">
+					<button>Calcular</button>
+				</div>
+			</div>
+		</div>
+		<div id="rectifier">
+			<h1>Retificador</h1>
+			<div class="tabs">
+				<ul>
+					<li><a href="#tabs-1">D</a></li>
+					<li><a href="#tabs-2">L</a></li>
+					<li><a href="#tabs-3">C</a></li>
+					<li><a href="#tabs-4">R</a></li>
+				</ul>
+				<div id="tabs-1">					
+					<label>V<sub>0</sub></label>
+					<input type="number">
+					<label>V<sub>I</sub></label>
+					<input type="number">
+					<button>Calcular</button>		
+				</div>
+				<div id="tabs-2">
+					<label>D</label>
+					<input type="number">
+					<label>V<sub>0</sub></label>
+					<input type="number">
+					<label>&#916;<sub>IL</sub></label>
+					<input type="number">
+					<label>&fnof;</label>
+					<input type="number">
+					<button>Calcular</button>		
+				</div>
+				<div id="tabs-3">
+					<label>D</label>
+					<input type="number">
+					<label>V<sub>0</sub></label>
+					<input type="number">
+					<label>L</label>
+					<input type="number">
+					<label>&#916;<sub>V<sub>0</sub></sub></label>
+					<input type="number">
+					<label>&fnof;</label>
+					<input type="number">
+					<button>Calcular</button>			
+				</div>
+				<div id="tabs-4">
+					<label>I<sub>0</sub></label>
+					<input type="number">
+					<label>V<sub>0</sub></label>
+					<input type="number">
+					<button>Calcular</button>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
