@@ -25,3 +25,9 @@ div > h1 {
 	text-align: center;
 	text-transform: uppercase;
 }
+#copyright {
+	display: none;
+	text-align: center;
+	font-size: 14px;
+	color: #586069;
+}

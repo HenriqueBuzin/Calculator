@@ -3,20 +3,29 @@ $(document).ready(function() {
 	var buck = $("#buck");
 	var rectifier = $("#rectifier");
 	$(".tabs").tabs();
-	$(".circuit").click(function(){ 
+	$(".circuit").click(function(){
 		var value = $(".circuit:checked").val();
 		if(value == 1) {
 			boost.slideUp("slow");
 			buck.slideUp("slow");
-			rectifier.slideDown("slow");
+			$("#copyright").slideUp("slow");
+			rectifier.slideDown("slow", function() {
+				$("#copyright").slideDown("fast");
+			});
 		} else if(value == 2) {
 			rectifier.slideUp("slow");
 			boost.slideUp("slow");
-			buck.slideDown("slow");
+			$("#copyright").slideUp("slow");
+			buck.slideDown("slow", function() {
+				$("#copyright").slideDown("fast");	
+			});
 		} else {
 			rectifier.slideUp("slow");
 			buck.slideUp("slow");
-			boost.slideDown("slow");
+			$("#copyright").slideUp("slow");
+			boost.slideDown("slow", function() {
+				$("#copyright").slideDown("fast");	
+			});
 		}
 	});
 	$("input[type=\"number\"]").keydown(function (event) {

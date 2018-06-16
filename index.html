@@ -29,154 +29,121 @@
 	<body>
 		<div id="select">
 			<label>Selecione o circuito:</label>
-			<input type="radio" name="circuit" class="circuit" value="1">Retificador
 			<input type="radio" name="circuit" class="circuit" value="2">Buck
 			<input type="radio" name="circuit" class="circuit" value="3">Boost
 		</div>
-		<div id="boost">
+		<div id="boost" class="greatness">
 			<h1>Boost</h1>
 			<div class="tabs">
 				<ul>
-					<li><a href="#tabs-1">D</a></li>
-					<li><a href="#tabs-2">R</a></li>
-					<li><a href="#tabs-3">L</a></li>
-					<li><a href="#tabs-4">C</a></li>
+					<li><a href="#boost-1">D</a></li>
+					<li><a href="#boost-2">R</a></li>
+					<li><a href="#boost-3">L</a></li>
+					<li><a href="#boost-4">C</a></li>
 				</ul>
-				<div id="tabs-1">					
-					<label for="boostdvo">V<sub>0</sub></label>
-					<input type="number" id="boostdvo">
-					<label for="boostdvi">V<sub>I</sub></label>
-					<input type="number" id="boostdvi">
-					<button class="calculate" data-circuit="boost" data-ingot="d">Calcular</button>
+				<div id="boost-1">	
+					<form class="calc" data-circuit="boost" data-variable="d">
+						<label for="boostdvo">V<sub>0</sub></label>
+						<input type="number" id="boostdvo">
+						<label for="boostdvi">V<sub>I</sub></label>
+						<input type="number" id="boostdvi">
+						<button>Calcular</button>
+					</form>
 				</div>
-				<div id="tabs-2">
-					<label for="boostrio">I<sub>0</sub></label>
-					<input type="number" id="boostrio">
-					<label for="boostrvo">V<sub>0</sub></label>
-					<input type="number" id="boostrvo">		
-					<button>Calcular</button>
+				<div id="boost-2">
+					<form class="calc">
+						<label for="boostrio">I<sub>0</sub></label>
+						<input type="number" id="boostrio">
+						<label for="boostrvo">V<sub>0</sub></label>
+						<input type="number" id="boostrvo">		
+						<button>Calcular</button>
+					</form>
 				</div>
-				<div id="tabs-3">
-					<label for="boostldeltai">&#916;<sub>I</sub></label>
-					<input type="number" id="boostldeltai">
-					<label for="boostld">D</label>
-					<input type="number" id="boostld">
-					<label for="boostldeltail">&#916;<sub>IL</sub></label>
-					<input type="number" id="boostldeltail">
-					<label for="boostlf">&fnof;</label>
-					<input type="number" id="boostlf">
-					<button>Calcular</button>
+				<div id="boost-3">
+					<form class="calc">
+						<label for="boostLDeltaI">&#916;<sub>I</sub></label>
+						<input type="number" id="boostLDeltaI">
+						<label for="boostLD">D</label>
+						<input type="number" id="boostLD">
+						<label for="boostLDeltaIL">&#916;<sub>IL</sub></label>
+						<input type="number" id="boostLDeltaIL">
+						<label for="boostLF">&fnof;</label>
+						<input type="number" id="boostLF">
+						<button>Calcular</button>
+					</form>
 				</div>
-				<div id="tabs-4">
-					<label for="boostcd">D</label>
-					<input type="number" id="boostcd">
-					<label for="boostcio">I<sub>0</sub></label>
-					<input type="number" id="boostcio">
-					<label for="boostcf">&fnof;</label>
-					<input type="number" id="boostcf">
-					<label for="boostcdeltavo">&#916;<sub>V<sub>0</sub></sub></label>
-					<input type="number" id="boostcdeltavo">
-					<button>Calcular</button>
+				<div id="boost-4">
+					<form class="calc">
+						<label for="boostcd">D</label>
+						<input type="number" id="boostcd">
+						<label for="boostcio">I<sub>0</sub></label>
+						<input type="number" id="boostcio">
+						<label for="boostcf">&fnof;</label>
+						<input type="number" id="boostcf">
+						<label for="boostcdeltavo">&#916;<sub>V<sub>0</sub></sub></label>
+						<input type="number" id="boostcdeltavo">
+						<button>Calcular</button>
+					</form>
 				</div>
 			</div>
 		</div>
-		<div id="buck">
+		<div id="buck" class="greatness">
 			<h1>Buck</h1>
 			<div class="tabs">
 				<ul>
-					<li><a href="#tabs-1">D</a></li>
-					<li><a href="#tabs-2">L</a></li>
-					<li><a href="#tabs-3">C</a></li>
-					<li><a href="#tabs-4">R</a></li>
+					<li><a href="#buck-1">D</a></li>
+					<li><a href="#buck-2">L</a></li>
+					<li><a href="#buck-3">C</a></li>
+					<li><a href="#buck-4">R</a></li>
 				</ul>
-				<div id="tabs-1">					
-					<label for="buckdvo">V<sub>0</sub></label>
-					<input type="number" id="buckdvo">
-					<label for="buckdvi">V<sub>I</sub></label>
-					<input type="number" id="buckdvi">
-					<button>Calcular</button>		
+				<div id="buck-1">	
+					<form action="" method="post" id="buckD">				
+						<label for="buckdvo">V<sub>0</sub></label>
+						<input type="number" id="buckdvo">
+						<label for="buckdvi">V<sub>I</sub></label>
+						<input type="number" id="buckdvi">
+						<button>Calcular</button>		
+					</form>
 				</div>
-				<div id="tabs-2">
-					<label for="buckld">D</label>
-					<input type="number" id="buckld">
-					<label for="bucklvo">V<sub>0</sub></label>
-					<input type="number" id="bucklvo">
-					<label for="buckldeltail">&#916;<sub>IL</sub></label>
-					<input type="number" id="buckldeltail">
-					<label for="bucklf">&fnof;</label>
-					<input type="number" id="bucklf">
-					<button>Calcular</button>		
+				<div id="buck-2">
+					<form action="" method="post" id="buckL">
+						<label for="buckld">D</label>
+						<input type="number" id="buckld">
+						<label for="bucklvo">V<sub>0</sub></label>
+						<input type="number" id="bucklvo">
+						<label for="buckldeltail">&#916;<sub>IL</sub></label>
+						<input type="number" id="buckldeltail">
+						<label for="bucklf">&fnof;</label>
+						<input type="number" id="bucklf">
+						<button>Calcular</button>		
+					</form>
 				</div>
-				<div id="tabs-3">
-					<label for="buckrd">D</label>
-					<input type="number" id="buckrd">
-					<label for="buckrvo">V<sub>0</sub></label>
-					<input type="number" id="buckrvo">
-					<label for="buckrl">L</label>
-					<input type="number" id="buckrl">
-					<label for="buckrdeltavo">&#916;<sub>V<sub>0</sub></sub></label>
-					<input type="number" id="buckrdeltavo">
-					<label for="buckrf">&fnof;</label>
-					<input type="number" id="buckrf">
-					<button>Calcular</button>			
+				<div id="buck-3">
+					<form action="" method="post" id="buckC">
+						<label for="buckrd">D</label>
+						<input type="number" id="buckrd">
+						<label for="buckrvo">V<sub>0</sub></label>
+						<input type="number" id="buckrvo">
+						<label for="buckrl">L</label>
+						<input type="number" id="buckrl">
+						<label for="buckrdeltavo">&#916;<sub>V<sub>0</sub></sub></label>
+						<input type="number" id="buckrdeltavo">
+						<label for="buckrf">&fnof;</label>
+						<input type="number" id="buckrf">
+						<button>Calcular</button>			
+					</form>
 				</div>
-				<div id="tabs-4">
-					<label for="buckrio">I<sub>0</sub></label>
-					<input type="number" id="buckrio">
-					<label for="buckrvo">V<sub>0</sub></label>
-					<input type="number" id="buckrvo">
-					<button>Calcular</button>
+				<div id="buck-4">
+					<form action="" method="post" id="buckR">
+						<label for="buckrio">I<sub>0</sub></label>
+						<input type="number" id="buckrio">
+						<label for="buckrvo">V<sub>0</sub></label>
+						<input type="number" id="buckrvo">
+						<button>Calcular</button>
+					</form>
 				</div>
 			</div>
 		</div>
-		<div id="rectifier">
-			<h1>Retificador</h1>
-			<div class="tabs">
-				<ul>
-					<li><a href="#tabs-1">D</a></li>
-					<li><a href="#tabs-2">L</a></li>
-					<li><a href="#tabs-3">C</a></li>
-					<li><a href="#tabs-4">R</a></li>
-				</ul>
-				<div id="tabs-1">					
-					<label>V<sub>0</sub></label>
-					<input type="number">
-					<label>V<sub>I</sub></label>
-					<input type="number">
-					<button>Calcular</button>		
-				</div>
-				<div id="tabs-2">
-					<label>D</label>
-					<input type="number">
-					<label>V<sub>0</sub></label>
-					<input type="number">
-					<label>&#916;<sub>IL</sub></label>
-					<input type="number">
-					<label>&fnof;</label>
-					<input type="number">
-					<button>Calcular</button>		
-				</div>
-				<div id="tabs-3">
-					<label>D</label>
-					<input type="number">
-					<label>V<sub>0</sub></label>
-					<input type="number">
-					<label>L</label>
-					<input type="number">
-					<label>&#916;<sub>V<sub>0</sub></sub></label>
-					<input type="number">
-					<label>&fnof;</label>
-					<input type="number">
-					<button>Calcular</button>			
-				</div>
-				<div id="tabs-4">
-					<label>I<sub>0</sub></label>
-					<input type="number">
-					<label>V<sub>0</sub></label>
-					<input type="number">
-					<button>Calcular</button>
-				</div>
-			</div>
-		</div>
+		<p id="copyright">Henrique Buzin - MIT License</p>
 	</body>
 </html>
